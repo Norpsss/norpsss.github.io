@@ -18,6 +18,7 @@
     }
 
     body {
+      position: relative;
       min-height: 100vh;
       margin: 0;
       display: grid;
@@ -28,14 +29,27 @@
         radial-gradient(circle at 80% 30%, #ffffffa8 0 2px, transparent 3px),
         #f4f0e5;
       background-size: 90px 90px, 130px 130px, auto;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: url("joulupukki_keinuhevonen.png") center / min(100vw, 70rem) auto no-repeat;
+      opacity: 0.28;
+      pointer-events: none;
     }
 
     main {
+      position: relative;
+      z-index: 1;
       width: min(100%, 34rem);
       padding: clamp(2rem, 8vw, 4rem);
       border: 1px solid #d5c9ad;
       border-radius: 1.25rem;
-      background: #fffdf7;
+      background: rgba(255, 253, 247, 0.88);
       box-shadow: 0 1.25rem 3rem #173c2c1c;
       text-align: center;
     }
